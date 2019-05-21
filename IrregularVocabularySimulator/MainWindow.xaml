@@ -43,6 +43,20 @@
             <TabItem Header="Do the Test!">
                 <Grid Background="#FFE5E5E5">
                     <Label Content="© 2019 nyTEC." HorizontalAlignment="Left" Margin="5,368,0,0" VerticalAlignment="Top" FontSize="10"/>
+                    <GroupBox Header="Your Vocable" HorizontalAlignment="Left" Height="81" Margin="147,10,0,0" VerticalAlignment="Top" Width="190">
+                        <TextBlock HorizontalAlignment="Left" TextAlignment="Center" Height="39" Margin="0,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="25"  Width="175" Name="VocableDisplay"/>
+                    </GroupBox>
+                    <GroupBox Header="Answeres" HorizontalAlignment="Left" Height="116" Margin="10,96,0,0" VerticalAlignment="Top" Width="465">
+                        <Grid HorizontalAlignment="Left" Height="90" VerticalAlignment="Top" Width="464" Margin="0,0,-2,0">
+                            <Label Content="Simple Past" HorizontalAlignment="Left" Height="28" Margin="41,10,0,0" VerticalAlignment="Top" Width="80" FontWeight="Black"/>
+                            <Label Content="Past Participle" HorizontalAlignment="Left" Height="28" Margin="180,10,0,0" VerticalAlignment="Top" Width="97" FontWeight="Black"/>
+                            <Label Content="Translation" HorizontalAlignment="Left" Height="28" Margin="342,10,0,0" VerticalAlignment="Top" Width="81" FontWeight="Black"/>
+                            <TextBox HorizontalAlignment="Left" Height="22" Margin="32,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
+                            <TextBox HorizontalAlignment="Left" Height="22" Margin="180,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
+                            <TextBox HorizontalAlignment="Left" Height="22" Margin="333,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
+                        </Grid>
+                    </GroupBox>
+                    <ProgressBar HorizontalAlignment="Left" Height="18" Margin="10,345,0,0" VerticalAlignment="Top" Width="465" />
                 </Grid>
             </TabItem>
             <TabItem Header="Personal statistics and progress">
@@ -52,5 +66,7 @@
                 </Grid>
             </TabItem>
         </TabControl>
+        <Button Content="Button" HorizontalAlignment="Left" Height="58" Margin="-218,199,0,0" VerticalAlignment="Top" Width="112"/>
+        <Button Content="Button" HorizontalAlignment="Left" Height="58" Margin="-218,308,0,0" VerticalAlignment="Top" Width="112"/>
     </Grid>
 </Window>
