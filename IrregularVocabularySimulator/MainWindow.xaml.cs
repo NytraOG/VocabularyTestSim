@@ -1,31 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using ClassLib;
 
 namespace IrregularVocabularySimulator
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    ///     Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        public List<VokabelModel> Vokabeln { get; set; } = new List<VokabelModel>();
         public MainWindow()
         {
             InitializeComponent();
         }
+
+        public List<VokabelModel> Vokabeln { get; set; } = new List<VokabelModel>();
 
         public void LadeVokabelListe()
         {
@@ -36,10 +26,11 @@ namespace IrregularVocabularySimulator
 
         public void VerbindeVokabelListe()
         {
-            VokabelListBox.ItemsSource = null;
-            VokabelListBox.ItemsSource = Vokabeln;
+            VokabelListBox.ItemsSource       = null;
+            VokabelListBox.ItemsSource       = Vokabeln;
             VokabelListBox.DisplayMemberPath = "ListDisplay";
         }
+
         private void RefreshList(object sender, RoutedEventArgs e)
         {
             LadeVokabelListe();
@@ -49,8 +40,9 @@ namespace IrregularVocabularySimulator
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(Infinitiv.Text) || string.IsNullOrWhiteSpace(SimplePast.Text) || string.IsNullOrWhiteSpace(PastParticiple.Text) || string.IsNullOrWhiteSpace(Translation.Text))
-                    throw new Exception("Fields must NOT be empty!");
+                if (string.IsNullOrWhiteSpace(Infinitiv.Text)      || string.IsNullOrWhiteSpace(SimplePast.Text) ||
+                    string.IsNullOrWhiteSpace(PastParticiple.Text) || string.IsNullOrWhiteSpace(Translation.Text))
+                    throw new Exception("Fields must NOT be empty FOOL!");
 
                 var vokabel = new VokabelModel
                               {
@@ -69,7 +61,43 @@ namespace IrregularVocabularySimulator
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An exception just occurred: " + ex.Message, "ERROR", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("An exception just occurred: " + ex.Message, "ERROR", MessageBoxButton.OK,
+                                MessageBoxImage.Warning);
+            }
+        }
+
+        private void RemoveVocableFromList(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var ausgewählteVokabeln = VokabelListBox.SelectedItems;
+
+                if (ausgewählteVokabeln.Count == 0)
+                    throw new Exception("You need to select Data, if you want to delete it LOL scrub");
+
+                var listOfVocabulary = new List<VokabelModel>();
+
+                foreach (VokabelModel vokabel in ausgewählteVokabeln)
+                {
+                    var retValVokabel = new VokabelModel
+                                        {
+                                            Infinitiv      = vokabel.Infinitiv,
+                                            SimplePast     = vokabel.SimplePast,
+                                            PastParticiple = vokabel.PastParticiple,
+                                            Translation    = vokabel.Translation
+                                        };
+
+                    listOfVocabulary.Add(retValVokabel);
+                }
+
+                SqliteDataAccess.LöscheVokabeln(listOfVocabulary);
+
+                RefreshList(sender, e);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An exception just occurred: " + ex.Message, "ERROR", MessageBoxButton.OK,
+                                MessageBoxImage.Warning);
             }
         }
     }

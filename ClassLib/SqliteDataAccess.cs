@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -19,6 +20,17 @@ namespace ClassLib
             {
                 var output = cnn.Query<VokabelModel>("select * from Vokabel", new DynamicParameters());
                 return output.ToList();
+            }
+        }
+
+        public static void LöscheVokabeln(IList<VokabelModel> ausgewählteVokabeln)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                foreach (var vokabel in ausgewählteVokabeln)
+                {
+                    cnn.Execute($"delete from Vokabel where Infinitiv = '{vokabel.Infinitiv}'");
+                }
             }
         }
 
