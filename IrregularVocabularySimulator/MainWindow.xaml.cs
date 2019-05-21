@@ -21,9 +21,28 @@ namespace IrregularVocabularySimulator
     /// </summary>
     public partial class MainWindow : Window
     {
+        public List<VokabelModel> Vokabeln { get; set; } = new List<VokabelModel>();
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        public void LadeVokabelListe()
+        {
+            Vokabeln = SqliteDataAccess.LadeVokabeln();
+
+            VerbindeVokabelListe();
+        }
+
+        public void VerbindeVokabelListe()
+        {
+            VokabelListBox.ItemsSource = null;
+            VokabelListBox.ItemsSource = Vokabeln;
+            VokabelListBox.DisplayMemberPath = "ListDisplay";
+        }
+        private void RefreshList(object sender, RoutedEventArgs e)
+        {
+            LadeVokabelListe();
         }
 
         private void AddVocableToDatabase(object sender, RoutedEventArgs e)
