@@ -1,0 +1,43 @@
+﻿<Window x:Class="IrregularVocabularySimulator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IrregularVocabularySimulator"
+        mc:Ignorable="d"
+        Title="Vocabletest-Simulator" Height="450" Width="507.99">
+    <Grid>
+        <TabControl HorizontalAlignment="Left" Height="419" VerticalAlignment="Top" Width="500">
+            <TabItem Header="Vocable Configuration">
+                <Grid Background="#FFE5E5E5">
+                    <Button Width="100" Height="100" Margin="807,318,-413,-27">
+                        <Button.FontWeight>Bold</Button.FontWeight>
+                        <Button.Content>A button</Button.Content>
+                    </Button>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="10,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100" Name="Infinitiv"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="127,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100" Name="SimplePast"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="250,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100" Name="PastParticiple"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="373,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100" Name="Translation"/>
+                    <Label Content="Infinitiv" HorizontalAlignment="Left" Margin="31,4,0,0" VerticalAlignment="Top" FontSize="16"/>
+                    <Label Content="Simple Past" HorizontalAlignment="Left" Margin="127,4,0,0" VerticalAlignment="Top" FontSize="16"/>
+                    <Label Content="Past Participle" HorizontalAlignment="Left" Margin="243,4,0,0" VerticalAlignment="Top" FontSize="16"/>
+                    <Label Content="Translation" HorizontalAlignment="Left" Margin="373,4,0,0" VerticalAlignment="Top" FontSize="16"/>
+                    <Button Content="Add Vocable!" HorizontalAlignment="Left" Margin="188,80,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="AddVocableToDatabase"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Test configuration">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="WORK IN PROGRESS" HorizontalAlignment="Center" Margin="43,152,61,169" VerticalAlignment="Center" Height="70" Width="390" FontSize="40"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Do the Test!">
+                <Grid Background="#FFE5E5E5"></Grid>
+            </TabItem>
+            <TabItem Header="Personal statistics and progress">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="WORK IN PROGRESS" HorizontalAlignment="Left" Margin="50,158,0,0" VerticalAlignment="Top" FontSize="40"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
