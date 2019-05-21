@@ -50,9 +50,8 @@ namespace IrregularVocabularySimulator
             }
             catch (Exception ex)
             {
-                MessageBox.Show("A handled exception just occurred: " + ex.Message, "ERROR", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("An exception just occurred: " + ex.Message, "ERROR", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
-
         }
     }
 }

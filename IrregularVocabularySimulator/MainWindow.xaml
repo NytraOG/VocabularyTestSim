@@ -3,25 +3,33 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        DataContext=""
         xmlns:local="clr-namespace:IrregularVocabularySimulator"
         mc:Ignorable="d"
         Title="VocabularyTest-Simulator" Height="450" Width="507.99">
+
     <Grid>
         <TabControl HorizontalAlignment="Left" Height="419" VerticalAlignment="Top" Width="500">
             <TabItem Header="Vocable Configuration">
                 <Grid Background="#FFE5E5E5">
-                    <GroupBox Header="Adding Vocabulary&#xD;&#xA;" HorizontalAlignment="Left" Height="361" Margin="305,10,0,0" VerticalAlignment="Top" Width="171"/>
+                    <GroupBox Header="Add Vocabulary&#xA;" HorizontalAlignment="Left" Height="361" Margin="305,10,0,0" VerticalAlignment="Top" Width="171"/>
                     <Grid HorizontalAlignment="Left" Height="334" Margin="305,37,0,0" VerticalAlignment="Top" Width="171">
                         <Label Content="Infinitiv" HorizontalAlignment="Left" Margin="52,10,0,0" VerticalAlignment="Top" FontSize="16" Width="65"/>
                         <TextBox HorizontalAlignment="Left" Height="23" Margin="34,46,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100" x:Name="Infinitiv"/>
                         <Label Content="Simple Past" HorizontalAlignment="Left" Margin="34,74,0,0" VerticalAlignment="Top" FontSize="16"/>
                         <TextBox HorizontalAlignment="Left" Height="23" Margin="34,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100" x:Name="SimplePast"/>
-                        <Label Content="Past Participle" HorizontalAlignment="Left" Margin="34,138,0,0" VerticalAlignment="Top" FontSize="16"/>
+                        <Label Content="Past Participle" HorizontalAlignment="Left" Margin="34,138,0,0" VerticalAlignment="Top" FontSize="16" Width="107"/>
                         <TextBox HorizontalAlignment="Left" Height="23" Margin="34,174,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100" x:Name="PastParticiple"/>
                         <Label Content="Translation" HorizontalAlignment="Left" Margin="39,202,0,0" VerticalAlignment="Top" FontSize="16"/>
                         <TextBox HorizontalAlignment="Left" Height="23" Margin="34,238,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100" x:Name="Translation"/>
                         <Button Content="Add Vocable!" HorizontalAlignment="Left" Margin="34,282,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="AddVocableToDatabase"/>
                     </Grid>
+                    <GroupBox Header="Remove Vocabulary" HorizontalAlignment="Left" Height="361" Margin="10,10,0,0" VerticalAlignment="Top" Width="290">
+                        <Grid HorizontalAlignment="Left" Height="322" Margin="10,10,0,0" VerticalAlignment="Top" Width="264">
+                            <Button Content="Refresh List" HorizontalAlignment="Left" Margin="19,277,0,0" VerticalAlignment="Top" Width="100" Height="35"/>
+                            <Button Content="Remove" HorizontalAlignment="Left" Margin="144,277,0,0" VerticalAlignment="Top" Width="100" Height="35" />
+                        </Grid>
+                    </GroupBox>
                 </Grid>
             </TabItem>
             <TabItem Header="Test configuration">
