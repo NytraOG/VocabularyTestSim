@@ -50,6 +50,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LogicFromVersion_1\Constants.cs" />
+    <Compile Include="LogicFromVersion_1\Program.cs" />
+    <Compile Include="LogicFromVersion_1\TestManager.cs" />
+    <Compile Include="LogicFromVersion_1\VocableProvider.cs" />
+    <Compile Include="LogicFromVersion_1\WrongAnswer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqliteDataAccess.cs" />
     <Compile Include="VokabelModel.cs" />
