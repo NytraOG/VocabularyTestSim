@@ -31,21 +31,24 @@
                             <DataGrid HorizontalAlignment="Left" Margin="10,10,0,67" Width="294" Name="VokabelListBox"/>
                         </Grid>
                     </GroupBox>
+                    <Label Content="© 2019 nyTEC." HorizontalAlignment="Left" Margin="5,368,0,0" VerticalAlignment="Top" FontSize="10"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Test configuration">
                 <Grid Background="#FFE5E5E5">
                     <Label Content="WORK IN PROGRESS" HorizontalAlignment="Center" Margin="43,152,61,169" VerticalAlignment="Center" Height="70" Width="390" FontSize="40"/>
+                    <Label Content="© 2019 nyTEC." HorizontalAlignment="Left" Margin="5,368,0,0" VerticalAlignment="Top" FontSize="10"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Do the Test!">
                 <Grid Background="#FFE5E5E5">
-                    <Label Content="WORK IN PROGRESS" HorizontalAlignment="Left" Margin="30,129,0,0" VerticalAlignment="Top" Height="122" Width="412" FontSize="40"/>
+                    <Label Content="© 2019 nyTEC." HorizontalAlignment="Left" Margin="5,368,0,0" VerticalAlignment="Top" FontSize="10"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Personal statistics and progress">
                 <Grid Background="#FFE5E5E5">
                     <Label Content="WORK IN PROGRESS" HorizontalAlignment="Left" Margin="50,158,0,0" VerticalAlignment="Top" FontSize="40"/>
+                    <Label Content="© 2019 nyTEC." HorizontalAlignment="Left" Margin="5,368,0,0" VerticalAlignment="Top" FontSize="10"/>
                 </Grid>
             </TabItem>
         </TabControl>
