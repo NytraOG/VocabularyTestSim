@@ -1,4 +1,4 @@
-﻿namespace ClassLib
+﻿namespace ClassLib.Models
 {
     public class VokabelModel
     {

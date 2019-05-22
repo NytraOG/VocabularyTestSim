@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows;
 using ClassLib;
+using ClassLib.Models;
 
 namespace IrregularVocabularySimulator
 {
-    /// <summary>
-    ///     Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -29,7 +27,6 @@ namespace IrregularVocabularySimulator
         {
             VokabelListBox.ItemsSource       = null;
             VokabelListBox.ItemsSource       = Vokabeln;
-            VokabelListBox.DisplayMemberPath = "ListDisplay";
         }
 
         private void RefreshList(object sender, RoutedEventArgs e)
@@ -63,7 +60,7 @@ namespace IrregularVocabularySimulator
             catch (Exception ex)
             {
                 MessageBox.Show("An exception just occurred: " + ex.Message, "ERROR", MessageBoxButton.OK,
-                                MessageBoxImage.Warning);
+                                MessageBoxImage.Error);
             }
         }
 
@@ -98,7 +95,7 @@ namespace IrregularVocabularySimulator
             catch (Exception ex)
             {
                 MessageBox.Show("An exception just occurred: " + ex.Message, "ERROR", MessageBoxButton.OK,
-                                MessageBoxImage.Warning);
+                                MessageBoxImage.Error);
             }
         }
     }
