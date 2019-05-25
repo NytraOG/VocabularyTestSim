@@ -28,7 +28,7 @@
                         <Grid HorizontalAlignment="Left" Height="328" Margin="0,10,-2,0" VerticalAlignment="Top" Width="314">
                             <Button Content="Refresh List" HorizontalAlignment="Left" Margin="25,277,0,0" VerticalAlignment="Top" Width="100" Height="35" Click="RefreshList"/>
                             <Button Content="Remove" HorizontalAlignment="Left" Margin="179,277,0,0" VerticalAlignment="Top" Width="100" Height="35" Click="RemoveVocableFromList" />
-                            <DataGrid HorizontalAlignment="Left" Margin="10,10,0,67" Width="294" Name="VokabelListBox"/>
+                            <DataGrid HorizontalAlignment="Left" Margin="10,10,0,67" Width="294" Name="VokabelListGrid"/>
                         </Grid>
                     </GroupBox>
                     <Label Content="© 2019 nyTEC." HorizontalAlignment="Left" Margin="5,368,0,0" VerticalAlignment="Top" FontSize="10"/>

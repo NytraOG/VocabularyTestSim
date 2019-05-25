@@ -25,8 +25,8 @@ namespace IrregularVocabularySimulator
 
         public void VerbindeVokabelListe()
         {
-            VokabelListBox.ItemsSource       = null;
-            VokabelListBox.ItemsSource       = Vokabeln;
+            VokabelListGrid.ItemsSource       = null;
+            VokabelListGrid.ItemsSource       = Vokabeln;
         }
 
         private void RefreshList(object sender, RoutedEventArgs e)
@@ -68,7 +68,7 @@ namespace IrregularVocabularySimulator
         {
             try
             {
-                var ausgewählteVokabeln = VokabelListBox.SelectedItems;
+                var ausgewählteVokabeln = VokabelListGrid.SelectedItems;
 
                 if (ausgewählteVokabeln.Count == 0)
                     throw new Exception("You need to select Data, if you want to delete it LOL scrub");
