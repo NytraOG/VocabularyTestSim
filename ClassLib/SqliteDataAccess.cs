@@ -30,6 +30,15 @@ namespace ClassLib
             }
         }
 
+        public static void SpeichereAntwort(AntwortenModel antwort, string testrunOid)
+        {
+            using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
+            {
+                connection.Execute($"insert into Antwort (Infinitiv, SimplePast, PastParticiple, Translation, TestRun_Oid) " +
+                                   $"values ({antwort.Infinitiv}, {antwort.SimplePastEingabe}), {antwort.PastParticipleEingabe}, {antwort.ÜbersetzungEingabe}, {testrunOid}");
+            }
+        }
+
         public static void SpeichereVokabel(VokabelModel vokabel)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))

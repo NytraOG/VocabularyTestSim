@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
+using System.Linq;
 using System.Windows;
 using ClassLib;
 using ClassLib.Models;
@@ -14,7 +14,9 @@ namespace IrregularVocabularySimulator
             InitializeComponent();
         }
 
-        public List<VokabelModel> Vokabeln { get; set; } = new List<VokabelModel>();
+        public List<VokabelModel> Vokabeln          { get; set; } = new List<VokabelModel>();
+        public Dictionary<int, string> ZuPrüfendeVokabeln { get; set; }
+        public TestModel          AktuellerTestlauf { get; set; }
 
         public void LadeVokabelListe()
         {
@@ -25,13 +27,54 @@ namespace IrregularVocabularySimulator
 
         public void VerbindeVokabelListe()
         {
-            VokabelListGrid.ItemsSource       = null;
-            VokabelListGrid.ItemsSource       = Vokabeln;
+            VokabelListGrid.ItemsSource = null;
+            VokabelListGrid.ItemsSource = Vokabeln;
         }
 
         private void RefreshList(object sender, RoutedEventArgs e)
         {
             LadeVokabelListe();
+        }
+
+        private void TestStarten(object sender, RoutedEventArgs e)
+        {
+            AktuellerTestlauf = new TestModel();
+            AktuellerTestlauf.TestStarten();
+
+            var rng = new Random();
+            Vokabeln = SqliteDataAccess.LadeVokabeln();
+
+            for (int i = 0; i < 5; i++)
+            {
+                var randomVokabel = Vokabeln[rng.Next(0, Vokabeln.Count)].Infinitiv;
+
+                foreach (var vokabel in ZuPrüfendeVokabeln)
+                {
+                    if(vokabel.Value == randomVokabel)
+                        continue;
+
+                    ZuPrüfendeVokabeln.Add(i, vokabel.Value);
+                }
+
+                if (ZuPrüfendeVokabeln.Select(x => x.Value).Where(x => x != null && x.Equals(randomVokabel)) == null)
+                {
+                    //TODO fixmepls
+                }
+            }
+        }
+
+        private void AntwortAbgeben(object sender, RoutedEventArgs e)
+        {
+            var antwort = new AntwortenModel
+                          {
+                              Infinitiv             = VocableDisplay.Text,
+                              SimplePastEingabe     = SimplePastEingabe.Text,
+                              PastParticipleEingabe = PastParticipleEingabe.Text,
+                              ÜbersetzungEingabe    = TranslationEingabe.Text,
+                              TestrunOid            = AktuellerTestlauf.Oid
+                          };
+
+            SqliteDataAccess.SpeichereAntwort(antwort, AktuellerTestlauf.Oid);
         }
 
         private void AddVocableToDatabase(object sender, RoutedEventArgs e)

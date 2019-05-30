@@ -51,12 +51,16 @@
                             <Label Content="Simple Past" HorizontalAlignment="Left" Height="28" Margin="41,10,0,0" VerticalAlignment="Top" Width="80" FontWeight="Black"/>
                             <Label Content="Past Participle" HorizontalAlignment="Left" Height="28" Margin="180,10,0,0" VerticalAlignment="Top" Width="97" FontWeight="Black"/>
                             <Label Content="Translation" HorizontalAlignment="Left" Height="28" Margin="342,10,0,0" VerticalAlignment="Top" Width="81" FontWeight="Black"/>
-                            <TextBox HorizontalAlignment="Left" Height="22" Margin="32,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
-                            <TextBox HorizontalAlignment="Left" Height="22" Margin="180,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
-                            <TextBox HorizontalAlignment="Left" Height="22" Margin="333,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
+                            <TextBox HorizontalAlignment="Left" Height="22" Margin="32,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Name="SimplePastEingabe"/>
+                            <TextBox HorizontalAlignment="Left" Height="22" Margin="180,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Name="PastParticipleEingabe"/>
+                            <TextBox HorizontalAlignment="Left" Height="22" Margin="333,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Name="TranslationEingabe"/>
                         </Grid>
                     </GroupBox>
                     <ProgressBar HorizontalAlignment="Left" Height="18" Margin="10,345,0,0" VerticalAlignment="Top" Width="465" />
+                    <Button Content="Button" HorizontalAlignment="Left" Height="58" Margin="79,248,0,0" VerticalAlignment="Top" Width="112" Click="TestStarten" />
+                    <Button Content="Button" HorizontalAlignment="Left" Height="58" Margin="285,248,0,0" VerticalAlignment="Top" Width="112"/>
+                    <Button Content="Button" HorizontalAlignment="Left" Margin="92,27,0,0" VerticalAlignment="Top" Width="50" Height="50" Name="VorherigeVokabel"/>
+                    <Button Content="Button" HorizontalAlignment="Left" Margin="342,27,0,0" VerticalAlignment="Top" Width="50" Height="50" Name ="NächsteVokabel"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Personal statistics and progress">
@@ -66,7 +70,5 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <Button Content="Button" HorizontalAlignment="Left" Height="58" Margin="-218,199,0,0" VerticalAlignment="Top" Width="112"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="58" Margin="-218,308,0,0" VerticalAlignment="Top" Width="112"/>
     </Grid>
 </Window>

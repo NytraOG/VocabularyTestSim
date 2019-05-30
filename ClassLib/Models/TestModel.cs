@@ -1,21 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace ClassLib.Models
 {
     public class TestModel
     {
-        public TestModel(List<VokabelModel> zuTestendeVokabeln)
+        public TestModel()
         {
-            ZuTestendeVokabeln = zuTestendeVokabeln;
-            Antworten          = new List<AntwortenModel>();
+            Oid = Guid.NewGuid().ToString();
         }
 
-        public  List<VokabelModel>   ZuTestendeVokabeln { get; set; }
-        public  List<AntwortenModel> Antworten          { get; set; }
-        private DateTime             StartZeitpunkt     { get; set; }
-        private DateTime             EndZeitpunkt       { get; set; }
-        public  double               Testdauer          => (EndZeitpunkt - StartZeitpunkt).TotalMinutes;
+        public  string   Oid                      { get; }
+        private DateTime StartZeitpunkt           { get; set; }
+        private DateTime EndZeitpunkt             { get; set; }
+        public  string   Grade                    { get; set; }
+        public  double   CorrectAnswerePercentage { get; set; }
+        public  double   Runtime                  => (EndZeitpunkt - StartZeitpunkt).TotalMinutes;
+
+        public void CalculateCorrectAnswerePercentage()
+        {
+        }
+
+        public void CalculateGrade()
+        {
+        }
 
         public void TestStarten()
         {
@@ -26,7 +33,7 @@ namespace ClassLib.Models
         {
             EndZeitpunkt = DateTime.Now;
 
-            return Testdauer;
+            return Runtime;
         }
     }
 }
